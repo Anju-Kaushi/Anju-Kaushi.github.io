@@ -3,404 +3,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anjali Kaushalya | Portfolio</title>
-    <!-- FontAwesome for professional icons -->
+    <title>Anjali Kaushalya | Data Analyst & Software Engineer Intern</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --accent-orange: #FF5733;
-            --accent-yellow: #FFC300;
-            --text-main: #c9d1d9;
-            --text-light: #f0f6fc;
-            --border-color: #30363d;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --accent-hover: #0284c7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Segoe UI', BlinkMacSystemFont, Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
         }
 
-        /* Hero Section */
-        header {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at top right, rgba(255, 87, 51, 0.15), transparent),
-                        radial-gradient(circle at bottom left, rgba(255, 195, 0, 0.05), transparent);
-            padding: 2rem;
-            border-bottom: 1px solid var(--border-color);
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-            letter-spacing: -1px;
+        a:hover {
+            color: var(--accent-hover);
         }
 
-        .hero-title span {
-            background: linear-gradient(45deg, var(--accent-orange), var(--accent-yellow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-tagline {
-            font-size: 1.3rem;
-            color: #8b949e;
-            max-width: 700px;
-            margin-bottom: 2rem;
-        }
-
-        /* Container & Navigation */
         .container {
-            max-width: 1050px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 0 20px;
         }
 
-        /* Sections General */
-        section {
-            margin-bottom: 5rem;
+        /* --- Header & Navigation --- */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 100;
         }
 
-        .section-title {
-            font-size: 2rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
+        nav {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.75rem;
         }
 
-        .section-title::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: var(--border-color);
-            margin-left: 1rem;
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-main);
         }
 
-        /* Grid Frameworks */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-orange);
-        }
-
-        .skill-card h3 {
-            color: var(--text-light);
-            margin-bottom: 1rem;
+        .nav-links {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-card h3 i {
-            color: var(--accent-orange);
-        }
-
-        .skill-list {
+            gap: 20px;
             list-style: none;
         }
 
-        .skill-list li {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        .skill-list li::before {
-            content: "▹";
-            color: var(--accent-yellow);
+        .nav-links a:hover {
+            color: var(--accent-color);
         }
 
-        /* Projects Section */
-        .projects-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            transition: border-color 0.2s;
-        }
-
-        .project-card:hover {
-            border-color: #444c56;
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-            gap: 1rem;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            color: var(--text-light);
-        }
-
-        .project-role {
-            font-size: 0.9rem;
-            color: var(--accent-yellow);
-            background: rgba(255, 195, 0, 0.1);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-        }
-
-        .project-desc {
-            margin-bottom: 1.5rem;
-            color: #8b949e;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            background-color: #21262d;
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        /* Buttons & Links */
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: #21262d;
-            border: 1px solid var(--border-color);
-            color: var(--text-light);
-            padding: 0.5rem 1.25rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: background-color 0.2s, border-color 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #30363d;
-            border-color: #8b949e;
-        }
-
-        .btn.primary {
-            background-gradient: linear-gradient(45deg, var(--accent-orange), var(--accent-yellow));
-            background-color: var(--accent-orange);
-            color: #fff;
-            border: none;
-        }
-
-        .btn.primary:hover {
-            background-color: #e04e2e;
-        }
-
-        /* Connect Section Footer */
-        .connect-box {
-            background: linear-gradient(135deg, #1f1a16, #161b22);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 3rem;
+        /* --- Hero Section --- */
+        .hero {
+            padding: 80px 0 60px;
             text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        .social-icon {
-            font-size: 2rem;
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             color: var(--text-main);
-            transition: color 0.2s;
+            transition: all 0.3s ease;
         }
 
-        .social-icon:hover {
-            color: var(--accent-orange);
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
         }
 
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--accent-color);
+            color: #0f172a;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            color: #fff;
+        }
+
+        /* --- Sections General --- */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* --- Projects Section --- */
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--text-main);
+        }
+
+        .project-role {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+
+        .project-card ul {
+            list-style-type: square;
+            margin-left: 20px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .project-card ul li {
+            margin-bottom: 5px;
+        }
+
+        /* --- Timeline (Experience & Education) --- */
+        .timeline {
+            position: relative;
+            border-left: 2px solid var(--border-color);
+            padding-left: 20px;
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-color);
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .timeline-subtitle {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .timeline-item ul {
+            list-style-type: circle;
+            margin-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Footer --- */
         footer {
             text-align: center;
-            padding: 2rem;
-            font-size: 0.85rem;
-            color: #484f58;
-            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
         @media (max-width: 600px) {
-            .hero-title { font-size: 2.5rem; }
-            .connect-box { padding: 1.5rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero h2 { font-size: 1.1rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Header -->
+    <!-- Navigation -->
     <header>
-        <h1 class="hero-title">Hi, I'm <span>Anjali Kaushalya</span></h1>
-        <p class="hero-tagline">Data Science Undergraduate & Full-Stack Developer navigating the intersection of statistical analysis, data processing, and scalable backend engineering.</p>
-        <div class="btn-group">
-            <a href="#projects" class="btn primary"><i class="fa-solid fa-code"></i> View Projects</a>
-            <a href="#connect" class="btn"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+        <div class="container">
+            <nav>
+                <div class="logo">Anjali Kaushalya</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <div class="container">
-        
-        <!-- About Section -->
-        <section id="about">
-            <h2 class="section-title"><i class="fa-solid fa-user-astronaut"></i> About Me</h2>
-            <p style="font-size: 1.1rem; color: #8b949e; max-width: 850px; margin-bottom: 1.5rem;">
-                I hold a passionate commitment to data-driven system architecture. Moving through intensive software frameworks into advanced metrics analysis, I focus heavily on writing optimized database storage layers and converting raw structured pipelines into meaningful production dashboards.
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <h1>Anjali Kaushalya</h1>
+            <h2>Data Analyst & Software Engineer Intern</h2>
+            <p>
+                Highly motivated Data Science undergraduate transitioning from a strong analytical background in finance and project management. Equipped with a solid foundation in software engineering, data analytics, and database technologies.
             </p>
+            
+            <div class="social-links">
+                <a href="https://github.com/anjali" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/anjali" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:anjalikaushalya0827@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+94704328168" title="Phone"><i class="fas fa-phone"></i></a>
+            </div>
+
+            <a href="mailto:anjalikaushalya0827@gmail.com" class="btn"><i class="fas fa-paper-plane"></i> Get In Touch</a>
         </section>
 
-        <!-- Technical Skills Section -->
+        <!-- Technical Skills -->
         <section id="skills">
-            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Arsenal</h2>
+            <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
-                <!-- Card 1: Data Analytics -->
                 <div class="skill-card">
-                    <h3><i class="fa-solid fa-chart-line"></i> Data Analytics & DS</h3>
-                    <ul class="skill-list">
-                        <li>R Programming & RStudio</li>
-                        <li>Statistical Data Analysis</li>
-                        <li>Business Analytics</li>
-                        <li>Data Visualization & Dashboards</li>
-                    </ul>
+                    <h3>Programming & Analytics</h3>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">R</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">RStudio</span>
+                    </div>
                 </div>
-                <!-- Card 2: Core Engineering -->
                 <div class="skill-card">
-                    <h3><i class="fa-solid fa-laptop-code"></i> Software Engineering</h3>
-                    <ul class="skill-list">
-                        <li>SQL (MSSQL, MySQL)</li>
-                        <li>Python, C#, Java, C++</li>
-                        <li>PHP, ASP.NET Core</li>
-                        <li>Object-Oriented Programming</li>
-                    </ul>
+                    <h3>Web & Mobile Dev</h3>
+                    <div class="tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">ASP.NET Core</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">Android SDK</span>
+                    </div>
                 </div>
-                <!-- Card 3: Cloud & Practices -->
                 <div class="skill-card">
-                    <h3><i class="fa-solid fa-gears"></i> Tools & Architectures</h3>
-                    <ul class="skill-list">
-                        <li>Git & GitHub Version Control</li>
-                        <li>Database Design & ERDs</li>
-                        <li>Firebase Integration</li>
-                        <li>Agile Scrum Methodologies</li>
-                    </ul>
+                    <h3>Databases</h3>
+                    <div class="tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">MS SQL Server</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Platforms</h3>
+                    <div class="tags">
+                        <span class="tag">Git/GitHub</span>
+                        <span class="tag">Visual Studio</span>
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">Canva</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Technical Projects -->
         <section id="projects">
-            <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> Featured Projects</h2>
-            <div class="projects-list">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">AutoMind AI - Intelligent Vehicle Maintenance Co-pilot</h3>
+                    <span class="project-role">Backend & Frontend Developer</span>
+                </div>
+                <ul>
+                    <li>Developed responsive web layouts and integrated secure user document storage utilizing Firebase and PHP.</li>
+                    <li>Engineered relational schemas, created comprehensive UML/ER diagrams, and handled software testing protocols.</li>
+                    <li>Collaborated in an Agile SDLC environment to meet sprint deadlines and document technical reports.</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">PHP</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">UML/ERD</span>
+                    <span class="tag">Agile</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
                 
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">🚗 AutoMind AI – Intelligent Vehicle Maintenance Co-Pilot</h3>
-                        <span class="project-role">Module Lead Developer</span>
-                    </div>
-                    <p class="project-desc">
-                        Designed user-friendly tracking modules for handling system logging parameters. Engineered normalization models for standard structure designs alongside secure CRUD backend integration handling automated file pipelines seamlessly.
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tag">PHP</span><span class="tag">Firebase</span><span class="tag">SQL</span><span class="tag">JavaScript</span><span class="tag">Agile SDLC</span>
-                    </div>
-                    <div class="btn-group">
-                        <a href="https://github.com/Anju-Kaushi" target="_blank" class="btn"><i class="fa-brands fa-github"></i> Repository</a>
-                    </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Assistant Accountant</div>
+                    <div class="timeline-subtitle">Lithium Technologies</div>
+                    <div class="timeline-date">Feb 2023 – Present</div>
+                    <ul>
+                        <li>Prepare customer invoices, payment receipts, vouchers, and journal entries.</li>
+                        <li>Manage debit/credit notes, bank reconciliations, and verify financial records.</li>
+                        <li>Monitor recovery sheets and proactively coordinate with customers on payment status.</li>
+                        <li>Support monthly financial reporting and ensure ledger accuracy.</li>
+                    </ul>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">📊 Predictive Business Model Case Study</h3>
-                        <span class="project-role">Data Analyst</span>
-                    </div>
-                    <p class="project-desc">
-                        Developing an end-to-end dataset analytical structure evaluating metric distributions, outlier analysis cleaning arrays, and implementing descriptive plots evaluating structural business decisions.
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tag">R Programming</span><span class="tag">RStudio</span><span class="tag">Data Optimization</span><span class="tag">Statistical Modeling</span>
-                    </div>
-                    <div class="btn-group">
-                        <span class="btn" style="opacity: 0.6; cursor: not-allowed;"><i class="fa-solid fa-clock"></i> Development In Progress</span>
-                    </div>
+                <div class="timeline-item">
+                    <div class="timeline-title">Quantity Surveyor / Trainee Quantity Surveyor</div>
+                    <div class="timeline-subtitle">Vajira House Builders, HR Real Estate, Nest Engineering, Tudawe Brothers</div>
+                    <div class="timeline-date">Aug 2018 – Jan 2023</div>
+                    <ul>
+                        <li>Prepared detailed client quotations, material estimates, and costing sheets.</li>
+                        <li>Processed interim bills, subcontract payment certificates, and final account audits.</li>
+                        <li>Managed cost control, budgeting frameworks, and project financial tracking.</li>
+                    </ul>
                 </div>
 
             </div>
         </section>
 
-        <!-- Connect/Contact Section -->
-        <section id="connect">
-            <div class="connect-box">
-                <h2>Let's build something insightful together</h2>
-                <p style="color: #8b949e; margin-bottom: 2rem; margin-top: 0.5rem;">I am currently seeking opportunities for junior data positions, business intelligence roles, or full-stack software tracks.</p>
-                <a href="mailto:anjalikaushalya0827@gmail.com" class="btn primary"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
+        <!-- Education & Certifications -->
+        <section id="education">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="timeline">
                 
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/anjali-kaushalya-2b6910196" target="_blank" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/Anju-Kaushi" target="_blank" class="social-icon" title="GitHub"><i class="fa-brands fa-square-github"></i></a>
+                <div class="timeline-item">
+                    <div class="timeline-title">BSc (Hons) in Data Science (Reading)</div>
+                    <div class="timeline-subtitle">Cardiff Metropolitan University, UK</div>
+                    <div class="timeline-date">2026 – 2027</div>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-title">Higher Diploma in Computing & Software Engineering</div>
+                    <div class="timeline-subtitle">Cardiff Metropolitan University, UK</div>
+                    <div class="timeline-date">2024 – 2026</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-title">Certifications</div>
+                    <ul>
+                        <li><strong>Professional Certificate in Artificial Intelligence</strong> – Informatics Institute of Technology (2025–2026)</li>
+                        <li><strong>Online Search Engine Optimization (SEO) Course</strong> – Evotech Education (2023)</li>
+                        <li><strong>Diploma in AutoCAD</strong> – SNAP FERD (2019)</li>
+                        <li><strong>Diploma in English</strong> – ESOFT Metro Campus (2016)</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
-
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Anjali Kaushalya. Built cleanly via GitHub Pages.</p>
+        <div class="container">
+            <p>&copy; 2026 Anjali Kaushalya. Built with HTML & CSS.</p>
+        </div>
     </footer>
 
 </body>
