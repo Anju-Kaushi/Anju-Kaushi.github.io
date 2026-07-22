@@ -1,553 +1,1098 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Anjali Kaushalya | Portfolio</title>
+
     
+
     <!-- Google Fonts & FontAwesome -->
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     
+
     <style>
+
         :root {
+
             --bg-dark: #090d16;
+
             --card-bg: rgba(22, 31, 48, 0.7);
+
             --card-border: rgba(56, 189, 248, 0.15);
+
             --accent-cyan: #38bdf8;
+
             --accent-glow: rgba(56, 189, 248, 0.35);
+
             --text-main: #f1f5f9;
+
             --text-muted: #94a3b8;
+
             --font-family: 'Plus Jakarta Sans', sans-serif;
+
         }
+
+
 
         * {
+
             box-sizing: border-box;
+
             margin: 0;
+
             padding: 0;
+
             scroll-behavior: smooth;
+
         }
+
+
 
         body {
+
             font-family: var(--font-family);
+
             background-color: var(--bg-dark);
+
             color: var(--text-main);
+
             line-height: 1.7;
+
             overflow-x: hidden;
+
         }
+
+
 
         /* --- Background Glow Effects --- */
+
         .bg-glow-1 {
+
             position: fixed;
+
             top: -10%;
+
             left: -10%;
+
             width: 40vw;
+
             height: 40vw;
+
             background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(0,0,0,0) 70%);
+
             z-index: -1;
+
             pointer-events: none;
+
         }
+
+
 
         .bg-glow-2 {
+
             position: fixed;
+
             bottom: -10%;
+
             right: -10%;
+
             width: 50vw;
+
             height: 50vw;
+
             background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, rgba(0,0,0,0) 70%);
+
             z-index: -1;
+
             pointer-events: none;
+
         }
+
+
 
         .container {
+
             max-width: 950px;
+
             margin: 0 auto;
+
             padding: 0 24px;
+
         }
+
+
 
         /* --- Navigation --- */
+
         header {
+
             padding: 20px 0;
+
             position: sticky;
+
             top: 0;
+
             background: rgba(9, 13, 22, 0.85);
+
             backdrop-filter: blur(12px);
+
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
             z-index: 100;
+
         }
+
+
 
         nav {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
         }
+
+
 
         .logo {
+
             font-weight: 700;
+
             font-size: 1.25rem;
+
             letter-spacing: -0.5px;
+
             background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 100%);
+
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
         }
+
+
 
         .nav-links {
+
             display: flex;
+
             gap: 24px;
+
             list-style: none;
+
         }
+
+
 
         .nav-links a {
+
             color: var(--text-muted);
+
             font-size: 0.9rem;
+
             font-weight: 500;
+
             text-decoration: none;
+
             transition: all 0.2s ease;
+
         }
+
+
 
         .nav-links a:hover {
+
             color: var(--accent-cyan);
+
         }
+
+
 
         /* --- Hero Section --- */
+
         .hero {
+
             padding: 100px 0 70px;
+
             text-align: center;
+
         }
+
+
 
         .badge {
+
             display: inline-block;
+
             padding: 6px 16px;
+
             border-radius: 20px;
+
             background: rgba(56, 189, 248, 0.08);
+
             border: 1px solid rgba(56, 189, 248, 0.2);
+
             color: var(--accent-cyan);
+
             font-size: 0.825rem;
+
             font-weight: 600;
+
             letter-spacing: 0.5px;
+
             margin-bottom: 20px;
+
             text-transform: uppercase;
+
         }
+
+
 
         .hero h1 {
+
             font-size: 3.2rem;
+
             font-weight: 700;
+
             letter-spacing: -1px;
+
             margin-bottom: 12px;
+
             line-height: 1.2;
+
         }
+
+
 
         .hero h2 {
+
             font-size: 1.35rem;
+
             color: var(--accent-cyan);
+
             font-weight: 500;
+
             margin-bottom: 24px;
+
         }
+
+
 
         .hero p {
+
             max-width: 680px;
+
             margin: 0 auto 36px;
+
             color: var(--text-muted);
+
             font-size: 1.05rem;
+
         }
+
+
 
         .social-links {
+
             display: flex;
+
             justify-content: center;
+
             gap: 16px;
+
             margin-bottom: 36px;
+
         }
+
+
 
         .social-links a {
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             width: 44px;
+
             height: 44px;
+
             border-radius: 12px;
+
             background: var(--card-bg);
+
             border: 1px solid var(--card-border);
+
             color: var(--text-main);
+
             text-decoration: none;
+
             transition: all 0.3s ease;
+
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
         }
+
+
 
         .social-links a:hover {
+
             background: var(--accent-cyan);
+
             color: #090d16;
+
             transform: translateY(-3px);
+
             box-shadow: 0 8px 20px var(--accent-glow);
+
         }
+
+
 
         .btn {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
+
             padding: 14px 28px;
+
             background: var(--accent-cyan);
+
             color: #090d16;
+
             font-weight: 600;
+
             border-radius: 10px;
+
             text-decoration: none;
+
             transition: all 0.3s ease;
+
             box-shadow: 0 4px 15px var(--accent-glow);
+
         }
+
+
 
         .btn:hover {
+
             transform: translateY(-2px);
+
             box-shadow: 0 8px 25px var(--accent-glow);
+
             background: #7dd3fc;
+
         }
+
+
 
         /* --- Section Titles --- */
+
         section {
+
             padding: 70px 0;
+
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
         }
+
+
 
         .section-title {
+
             font-size: 1.75rem;
+
             font-weight: 700;
+
             margin-bottom: 40px;
+
             display: flex;
+
             align-items: center;
+
             gap: 12px;
+
         }
+
+
 
         .section-title::before {
+
             content: '';
+
             display: inline-block;
+
             width: 12px;
+
             height: 12px;
+
             border-radius: 3px;
+
             background: var(--accent-cyan);
+
             box-shadow: 0 0 10px var(--accent-cyan);
+
         }
+
+
 
         /* --- Cards & Grid --- */
+
         .skills-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+
             gap: 20px;
+
         }
+
+
 
         .skill-card, .project-card, .timeline-card {
+
             background: var(--card-bg);
+
             border: 1px solid var(--card-border);
+
             border-radius: 16px;
+
             padding: 24px;
+
             backdrop-filter: blur(10px);
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .skill-card:hover, .project-card:hover {
+
             border-color: rgba(56, 189, 248, 0.4);
+
             transform: translateY(-4px);
+
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+
         }
+
+
 
         .skill-card h3 {
+
             font-size: 1.05rem;
+
             font-weight: 600;
+
             margin-bottom: 16px;
+
             color: #ffffff;
+
         }
+
+
 
         .tags {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 8px;
+
         }
+
+
 
         .tag {
+
             background: rgba(56, 189, 248, 0.08);
+
             color: var(--accent-cyan);
+
             padding: 5px 12px;
+
             border-radius: 8px;
+
             font-size: 0.8rem;
+
             font-weight: 500;
+
             border: 1px solid rgba(56, 189, 248, 0.15);
+
         }
+
+
 
         /* --- Projects Section --- */
+
         .project-card {
+
             padding: 28px;
+
             margin-bottom: 24px;
+
         }
+
+
 
         .project-header {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: flex-start;
+
             margin-bottom: 16px;
+
             gap: 16px;
+
             flex-wrap: wrap;
+
         }
+
+
 
         .project-title {
+
             font-size: 1.25rem;
+
             font-weight: 600;
+
             color: #fff;
+
         }
+
+
 
         .project-role {
+
             font-size: 0.85rem;
+
             background: rgba(56, 189, 248, 0.12);
+
             color: var(--accent-cyan);
+
             padding: 4px 12px;
+
             border-radius: 20px;
+
             font-weight: 600;
+
         }
+
+
 
         .project-card ul, .timeline-card ul {
+
             list-style: none;
+
             margin-bottom: 20px;
+
         }
+
+
 
         .project-card ul li, .timeline-card ul li {
+
             position: relative;
+
             padding-left: 20px;
+
             color: var(--text-muted);
+
             margin-bottom: 10px;
+
             font-size: 0.95rem;
+
         }
+
+
 
         .project-card ul li::before, .timeline-card ul li::before {
+
             content: "▹";
+
             position: absolute;
+
             left: 0;
+
             color: var(--accent-cyan);
+
         }
+
+
 
         /* --- Timeline (Experience & Education) --- */
+
         .timeline {
+
             display: flex;
+
             flex-direction: column;
+
             gap: 20px;
+
         }
+
+
 
         .timeline-card {
+
             position: relative;
+
         }
+
+
 
         .timeline-title {
+
             font-size: 1.15rem;
+
             font-weight: 600;
+
             color: #fff;
+
         }
+
+
 
         .timeline-subtitle {
+
             color: var(--accent-cyan);
+
             font-size: 0.95rem;
+
             font-weight: 500;
+
             margin-bottom: 4px;
+
         }
+
+
 
         .timeline-date {
+
             font-size: 0.85rem;
+
             color: var(--text-muted);
+
             margin-bottom: 16px;
+
         }
+
+
 
         /* --- Footer --- */
+
         footer {
+
             text-align: center;
+
             padding: 40px 0;
+
             color: var(--text-muted);
+
             font-size: 0.875rem;
+
         }
+
+
 
         @media (max-width: 640px) {
+
             .hero h1 { font-size: 2.2rem; }
+
             .hero h2 { font-size: 1.1rem; }
+
             .nav-links { display: none; }
+
             .project-header { flex-direction: column; align-items: flex-start; }
+
         }
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <div class="bg-glow-1"></div>
+
     <div class="bg-glow-2"></div>
 
+
+
     <!-- Navigation -->
+
     <header>
+
         <div class="container">
+
             <nav>
+
                 <div class="logo">Anjali Kaushalya</div>
+
                 <ul class="nav-links">
+
                     <li><a href="#about">About</a></li>
+
                     <li><a href="#skills">Skills</a></li>
+
                     <li><a href="#projects">Projects</a></li>
+
                     <li><a href="#experience">Experience</a></li>
+
                     <li><a href="#education">Education</a></li>
+
                 </ul>
+
             </nav>
+
         </div>
+
     </header>
 
+
+
     <div class="container">
+
         <!-- Hero Section -->
+
         <section class="hero" id="about">
+
             <span class="badge">Welcome to my portfolio</span>
+
             <h1>Anjali Kaushalya</h1>
+
             <h2>Data Analyst & Software Engineer Intern</h2>
+
             <p>
+
                 Highly motivated Data Science undergraduate transitioning from a strong analytical background in finance and project management. Equipped with a solid foundation in software engineering, data analytics, and database technologies.
+
             </p>
+
             
+
             <div class="social-links">
+
                 <a href="https://github.com/Anju-Kaushi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+
                 <a href="https://linkedin.com/in/anjalikaushalya" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
                 <a href="mailto:anjalikaushalya0827@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+
                 <a href="tel:+94704328168" title="Phone"><i class="fas fa-phone"></i></a>
+
             </div>
+
+
 
             <a href="mailto:anjalikaushalya0827@gmail.com" class="btn">
+
                 <i class="fas fa-paper-plane"></i> Get In Touch
+
             </a>
+
         </section>
+
+
 
         <!-- Technical Skills -->
+
         <section id="skills">
+
             <h2 class="section-title">Technical Skills</h2>
+
             <div class="skills-grid">
+
                 <div class="skill-card">
+
                     <h3>Programming & Analytics</h3>
+
                     <div class="tags">
+
                         <span class="tag">Python</span>
+
                         <span class="tag">R</span>
+
                         <span class="tag">Java</span>
+
                         <span class="tag">C#</span>
+
                         <span class="tag">C++</span>
+
                         <span class="tag">RStudio</span>
+
                     </div>
+
                 </div>
+
                 <div class="skill-card">
+
                     <h3>Web & Mobile Dev</h3>
+
                     <div class="tags">
+
                         <span class="tag">PHP</span>
+
                         <span class="tag">ASP.NET Core</span>
+
                         <span class="tag">JavaScript</span>
+
                         <span class="tag">HTML/CSS</span>
+
                         <span class="tag">Android SDK</span>
+
                     </div>
+
                 </div>
+
                 <div class="skill-card">
+
                     <h3>Databases</h3>
+
                     <div class="tags">
+
                         <span class="tag">SQL</span>
+
                         <span class="tag">MS SQL Server</span>
+
                         <span class="tag">MySQL</span>
+
                         <span class="tag">Firebase</span>
+
                     </div>
+
                 </div>
+
                 <div class="skill-card">
+
                     <h3>Tools & Platforms</h3>
+
                     <div class="tags">
+
                         <span class="tag">Git/GitHub</span>
+
                         <span class="tag">Visual Studio</span>
+
                         <span class="tag">VS Code</span>
+
                         <span class="tag">Figma</span>
+
                         <span class="tag">Canva</span>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- Technical Projects -->
-        <section id="projects">
-            <h2 class="section-title">Featured Projects</h2>
-            
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">AutoMind AI - Intelligent Vehicle Maintenance Co-pilot</h3>
-                    <span class="project-role">Backend & Frontend Developer</span>
-                </div>
-                <ul>
-                    <li>Developed responsive web layouts and integrated secure user document storage utilizing Firebase and PHP.</li>
-                    <li>Engineered relational schemas, created comprehensive UML/ER diagrams, and handled software testing protocols.</li>
-                    <li>Collaborated in an Agile SDLC environment to meet sprint deadlines and document technical reports.</li>
-                </ul>
-                <div class="tags">
-                    <span class="tag">PHP</span>
-                    <span class="tag">Firebase</span>
-                    <span class="tag">SQL</span>
-                    <span class="tag">UML/ERD</span>
-                    <span class="tag">Agile</span>
-                </div>
-            </div>
-        </section>
+
+
+        <!-- Projects Section -->
+		<section id="projects">
+				<h2 class="section-title">Featured Projects</h2>
+    
+			<div class="project-card">
+				<div class="project-header">
+					<span class="project-title">AutoMind AI — Vehicle Management System</span>
+					<span class="project-role">Data & Backend Developer</span>
+				</div>
+				<ul>
+					<li>Designed and implemented normalized relational database schemas and Entity-Relationship diagrams.</li>
+					<li>Developed backend functionality and data analytics modules for managing vehicle operations and maintenance logs.</li>
+				</ul>
+				<div class="tags">
+					<span class="tag">C#</span>
+					<span class="tag">.NET</span>
+					<span class="tag">MSSQL</span>
+					<span class="tag">Firebase</span>
+				</div>
+			</div>
+
+			<div class="project-card">
+				<div class="project-header">
+					<span class="project-title">Fitzorn — Gym Management System</span>
+					<span class="project-role">Full-Stack Developer</span>
+				</div>
+				<ul>
+					<li>Developed a dynamic, database-driven web application to manage gym operations, member records, trainer schedules, and payment processing.</li>
+					<li>Implemented secure user authentication, responsive design, and administrative dashboards for handling bookings and content management.</li>
+				</ul>
+				<div class="tags">
+					<span class="tag">PHP 8</span>
+					<span class="tag">MySQL</span>
+					<span class="tag">Bootstrap 5</span>
+					<span class="tag">JavaScript</span>
+				</div>
+			</div>
+		</section>
+
+
 
         <!-- Professional Experience -->
+
         <section id="experience">
+
             <h2 class="section-title">Professional Experience</h2>
+
             <div class="timeline">
+
                 
-                <div class="timeline-card">
-                    <div class="timeline-title">Assistant Accountant</div>
-                    <div class="timeline-subtitle">Lithium Technologies</div>
-                    <div class="timeline-date">Feb 2023 – Present</div>
-                    <ul>
-                        <li>Prepare customer invoices, payment receipts, vouchers, and journal entries.</li>
-                        <li>Manage debit/credit notes, bank reconciliations, and verify financial records.</li>
-                        <li>Monitor recovery sheets and proactively coordinate with customers on payment status.</li>
-                        <li>Support monthly financial reporting and ensure ledger accuracy.</li>
-                    </ul>
-                </div>
 
                 <div class="timeline-card">
-                    <div class="timeline-title">Quantity Surveyor / Trainee Quantity Surveyor</div>
-                    <div class="timeline-subtitle">Vajira House Builders, HR Real Estate, Nest Engineering, Tudawe Brothers</div>
-                    <div class="timeline-date">Aug 2018 – Jan 2023</div>
+
+                    <div class="timeline-title">Assistant Accountant</div>
+
+                    <div class="timeline-subtitle">Lithium Technologies</div>
+
+                    <div class="timeline-date">Feb 2023 – Present</div>
+
                     <ul>
-                        <li>Prepared detailed client quotations, material estimates, and costing sheets.</li>
-                        <li>Processed interim bills, subcontract payment certificates, and final account audits.</li>
-                        <li>Managed cost control, budgeting frameworks, and project financial tracking.</li>
+
+                        <li>Prepare customer invoices, payment receipts, vouchers, and journal entries.</li>
+
+                        <li>Manage debit/credit notes, bank reconciliations, and verify financial records.</li>
+
+                        <li>Monitor recovery sheets and proactively coordinate with customers on payment status.</li>
+
+                        <li>Support monthly financial reporting and ensure ledger accuracy.</li>
+
                     </ul>
+
                 </div>
+
+
+
+                <div class="timeline-card">
+
+                    <div class="timeline-title">Quantity Surveyor / Trainee Quantity Surveyor</div>
+
+                    <div class="timeline-subtitle">Vajira House Builders, HR Real Estate, Nest Engineering, Tudawe Brothers</div>
+
+                    <div class="timeline-date">Aug 2018 – Jan 2023</div>
+
+                    <ul>
+
+                        <li>Prepared detailed client quotations, material estimates, and costing sheets.</li>
+
+                        <li>Processed interim bills, subcontract payment certificates, and final account audits.</li>
+
+                        <li>Managed cost control, budgeting frameworks, and project financial tracking.</li>
+
+                    </ul>
+
+                </div>
+
+
 
             </div>
+
         </section>
+
+
 
         <!-- Education & Certifications -->
+
         <section id="education">
+
             <h2 class="section-title">Education & Certifications</h2>
+
             <div class="timeline">
+
                 
+
                 <div class="timeline-card">
+
                     <div class="timeline-title">BSc (Hons) in Data Science (Reading)</div>
+
                     <div class="timeline-subtitle">Cardiff Metropolitan University, UK</div>
+
                     <div class="timeline-date">2026 – 2027</div>
+
                 </div>
 
+
+
                 <div class="timeline-card">
+
                     <div class="timeline-title">Higher Diploma in Computing & Software Engineering</div>
+
                     <div class="timeline-subtitle">Cardiff Metropolitan University, UK</div>
+
                     <div class="timeline-date">2024 – 2026</div>
+
                 </div>
 
+
+
                 <div class="timeline-card">
+
                     <div class="timeline-title">Certifications</div>
+
                     <ul>
+
                         <li><strong>Professional Certificate in Artificial Intelligence</strong> – Informatics Institute of Technology (2025–2026)</li>
+
                         <li><strong>Online Search Engine Optimization (SEO) Course</strong> – Evotech Education (2023)</li>
+
                         <li><strong>Diploma in AutoCAD</strong> – SNAP FERD (2019)</li>
+
                         <li><strong>Diploma in English</strong> – ESOFT Metro Campus (2016)</li>
+
                     </ul>
+
                 </div>
+
+
 
             </div>
+
         </section>
+
     </div>
 
+
+
     <!-- Footer -->
+
     <footer>
+
         <div class="container">
+
             <p>&copy; 2026 Anjali Kaushalya. All rights reserved.</p>
+
         </div>
+
     </footer>
 
+
+
 </body>
+
 </html>
